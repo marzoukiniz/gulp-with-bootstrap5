@@ -1,4 +1,4 @@
-# orders screen
+# gulp starter
 **To install local modules run:**
 `npm install`
 > 1. now you are able to use the command `gulp` to compile *scss files.*
