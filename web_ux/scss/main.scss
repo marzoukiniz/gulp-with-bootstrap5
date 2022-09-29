@@ -1,0 +1,23 @@
+//Bootstrap and ovveride for variables
+// @import "../bootstrap5/functions.scss";
+@import "../../bootstrap5/bootstrap.scss";
+@import "customVariables";
+//Plugins
+@import "plugins/animation.scss";
+@import "plugins/ionrangeSlider.scss";
+//Customize
+@import "fonts.scss";
+@import "global.scss";
+@import "components.scss";
+@import "tabs.scss";
+@import "small-tabs.scss";
+@import "companies.scss";
+@import "notifications.scss";
+@import "transactions.scss";
+@import "portfolio.scss";
+@import "orders.scss";
+@import "margin-info.scss";
+@import "esign.scss";
+@import "add_fav.scss";
+@import "./plugin/ion.rangeSlider.min.scss";
+@import "range-slider.scss";

@@ -1,0 +1,196 @@
+@use "sass:math";
+$primary: #83205a;
+$border: #dedede;
+/************** custom select *************/
+.selectdiv {
+  margin: 10px;
+  min-width: 150px;
+}
+.select {
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 3px;
+  margin: 10px;
+}
+.select:after {
+  content: "▼";
+  padding: 12px;
+  font-size: 12px;
+  position: absolute;
+  left: 10px;
+  top: 2px;
+  z-index: 1;
+  text-align: center;
+  width: 10%;
+  height: 100%;
+  pointer-events: none;
+}
+.select__field {
+  height: 40px;
+  width: 100%;
+  min-width: 110px;
+  padding: 5px 25px;
+  color: #616263;
+  border: 1px solid #e3e3e3;
+  border-radius: 7px;
+  outline: none;
+  font-size: 16px;
+  -webkit-appearance: none;
+  /* for webkit browsers */
+  -moz-appearance: none;
+  /* for firefox */
+  appearance: none;
+  /* for modern browsers */
+}
+/* remove default caret for ie */
+.select__field::-ms-expand {
+  display: none;
+}
+.select__field:focus:invalid {
+  border-color: #fd6347;
+}
+.select__field:required:valid {
+  border-color: #006400;
+}
+/****************************range slider********************************/
+.noUi-target {
+  background: #e1eafa !important;
+  border-radius: 1px !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: 4px !important;
+  .noUi-handle {
+    border: 2px solid #ffffff !important;
+    border-radius: 50% !important;
+    background: #83205a !important;
+    width: 22px !important;
+    height: 18px !important;
+    cursor: default;
+    box-shadow: none !important;
+    &:after,
+    &:before {
+      display: none !important;
+    }
+  }
+  .noUi-value {
+    background: linear-gradient(205deg, #fff, #e6e6e6) !important;
+    font-family: Roboto-Bold !important;
+    font-size: 11px !important;
+    height: 23px !important;
+    width: auto !important;
+    color: #77869e !important;
+    padding: 3px 4px !important;
+    border-radius: 3px !important;
+    border: 0.5px solid #dedede !important;
+  }
+}
+/*****************************switch button *****************/
+/*
+ *
+ * Main stylesheet for Switchery.
+ * https://abpetkov.github.io/switchery/
+ *
+ */
+$switchery-height: 20px;
+$switchery-large-height: 46px;
+$switchery-small-height: 20px;
+.switchery {
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: round(math.div(2, 3) * $switchery-height);
+  cursor: pointer;
+  display: inline-block;
+  height: $switchery-height;
+  position: relative;
+  vertical-align: middle;
+  width: round(math.div(5, 3) * $switchery-height);
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+}
+.switchery > small {
+  background: #fff;
+  border-radius: 100%;
+  box-shadow: 0 round(math.div($switchery-height, 30))
+    round($switchery-height * 0.1) rgba(0, 0, 0, 0.4);
+  height: $switchery-height;
+  position: absolute;
+  top: 0;
+  width: $switchery-height;
+}
+.switchery.switchery-large {
+  border-radius: round(math.div(2, 3) * $switchery-large-height);
+  height: $switchery-large-height;
+  width: round(math.div(5, 3) * $switchery-large-height);
+}
+.switchery.switchery-large > small {
+  height: $switchery-large-height;
+  width: $switchery-large-height;
+  box-shadow: 0 round(math.div($switchery-large-height, 30))
+    round($switchery-large-height * 0.1) rgba(0, 0, 0, 0.4);
+}
+.switchery.switchery-small {
+  border-radius: round(math.div(2, 3) * $switchery-small-height);
+  height: $switchery-small-height;
+  width: round(math.div(5, 3) * $switchery-small-height);
+}
+.switchery.switchery-small > small {
+  height: $switchery-small-height;
+  width: $switchery-small-height;
+  box-shadow: 0 round(math.div($switchery-small-height, 30))
+    round($switchery-small-height * 0.1) rgba(0, 0, 0, 0.4);
+}
+/********************** custom radio ****************************/
+.custom-r {
+  //margin-top: 20px;
+  display: flex;
+  .inline-radio {
+    display: flex;
+    border-radius: 3px;
+    overflow: hidden;
+    div {
+      position: relative;
+      flex: 1;
+    }
+    input {
+      width: 100px;
+      height: 30px;
+      border-radius: 5px;
+      opacity: 0;
+      cursor: pointer;
+    }
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #77869e;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      // border-right: 0.5px solid #e6e6e6;
+      border: 1px solid #dedede;
+    }
+    div:last-child label {
+      // border-right: 0;
+    }
+    input:checked + label {
+      transition: 0.8s ease;
+      background: #91c9a5;
+      font-weight: 500;
+      color: #fff;
+    }
+  }
+}
